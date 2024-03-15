@@ -1,6 +1,6 @@
 # Compile JAR from root directory.
 javac -d ./classes/ $(find ./source/ -name "*.java")
-cd classes/ && jar -cvmf manifest.txt ../app.jar com
+cd classes/ && jar -cvmf manifest.txt ../JavaScaffold.jar $(find ./source/ -name "*.class")
 cd ../
 
 # Run main class file.
