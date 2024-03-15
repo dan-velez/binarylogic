@@ -19,13 +19,17 @@ public class Main {
         System.out.println("Name of main class:");
         String mainClassName = scan.nextLine();
 
-        createProjectDirectory(projectName);
-        createSourceFolder(projectName);
-        createClassFolder(projectName);
-        createManifestFile(projectName);
-        createMainClass(projectName, mainClassName);
-        createMakeFile(projectName, mainClassName);
-        createCleanFile(projectName);
+        try {
+            // createProjectDirectory(projectName);
+            // createSourceFolder(projectName);
+            // createClassFolder(projectName);
+            // createManifestFile(projectName);
+            createMainClass(projectName, mainClassName);
+            // createMakeFile(projectName, mainClassName);
+            // createCleanFile(projectName);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     } 
 
     public static void createProjectDirectory (String projectName) {
@@ -42,44 +46,71 @@ public class Main {
 
     public static void createSourceFolder (String projectName) {
         // Create souce folder.
-        new File("./"+projectName+"/source/").mkdirs;
+        try {
+            new File("./"+projectName+"/source/").mkdirs();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void createClassFolder (String projectName) {
         // Create classes folder.
-        new File("./"+projectName+"/classes/").mkdirs;
+        new File("./"+projectName+"/classes/").mkdirs();
     }
 
-    public static void createManifestFile (String projectName) { 
+    public static void createManifestFile (String projectName, 
+    String mainClassName) { 
         // Create manifest.txt
-        FileWriter writer = new FileWriter(
-            "./"+projectName+"/classes/manifest.txt");
-        writer.write("Main-Class: "+mainClassName+"\n");
-        writer.close();
+        try {
+            FileWriter writer = new FileWriter(
+                "./"+projectName+"/classes/manifest.txt");
+            writer.write("Main-Class: "+mainClassName+"\n");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void createMainClass (String projectName, 
-        String mainClassName) {
+    String mainClassName) {
         // Create main class. Split the string by '.'.
+        System.out.println("mainClassName: " + mainClassName);
+        String[] orgName = mainClassName.split("\\.");
+        
         // Create the directory structure in the 'source/' folder.
-        String[] orgName = mainClassName.Split("\.");
+        for(int i = 0; i < orgName.length-1; i++) {
+            new File("./"+projectName+"/source/"+orgName[i]+"/");
+        }
+        
+        String mainClassPath = "./"+projectName+"/source/";
+        for(int i = 0; i < orgName.length-1; i++) 
+            mainClassPath = mainClassPath+orgName[i]+"/";
+        mainClassPath = mainClassPath+orgName[orgName.length-1]+".java";
+
+        System.out.println("Creating main class: "+mainClassPath);
+        // FileWriter writer = new FileWriter("./"+projectName+"/source")
+
     }
 
     public static void createMakeFile (String projectName, 
-        String mainClassName) {
+    String mainClassName) {
         // Create make.sh
-        FileWriter writer2 = new FileWriter("./"+projectName+"/make.sh")
-        writer2.write(
-            "# Compile JAR from root directory." + "\n" +
-            "javac -d ./classes/ $(find ./source/ -name \"*.java\")" + "\n" +
-            "cd classes/ && jar -cvmf manifest.txt ../app.jar com" + "\n" +
-            "cd ../" + "\n" +
+        try {
+            FileWriter writer2 = new FileWriter("./"+projectName+"/make.sh");
+            writer2.write(
+                "# Compile JAR from root directory." + "\n" +
+                "javac -d ./classes/ $(find ./source/ -name \"*.java\")" + "\n"+
+                "cd classes/ && jar -cvmf manifest.txt ../app.jar com" + "\n" +
+                "cd ../" + "\n" +
 
-            "# Run main class file." + "\n" +
-            "java -cp classes " + mainClassName +  "\n" +
+                "# Run main class file." + "\n" +
+                "java -cp classes " + mainClassName +  "\n" +
 
-            "# Run JAR" + "\n" +
-            "# java -jar app1.jar")
+                "# Run JAR" + "\n" +
+                "# java -jar app1.jar");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void createCleanFile (String projectName) {

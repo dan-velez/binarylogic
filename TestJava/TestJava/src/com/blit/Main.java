@@ -1,13 +1,20 @@
 package com.blit;
 
-import com.blit.models.Person;
 import java.util.Scanner;
 import java.time.LocalDate;
 
-public class Models {
+import com.blit.models.Person;
+import com.blit.models.Sprinter;
+
+public class Main {
     public static void main (String[] args) {
         Scanner scan = new Scanner(System.in);
         Person person = new Person(null, (short)0);
+        Person sprinter = new Person();
+
+        (sprinter).name = "Daniel";
+        ((Sprinter)sprinter).walk(1000, "East");
+        System.out.println(sprinter.name);
 
         System.out.println("What is your name?");
         String answer = scan.nextLine();
@@ -51,11 +58,14 @@ public class Models {
         System.out.println("How many steps would you like to walk?");
         answer = scan.nextLine();
         person.walk(Integer.parseInt(answer), "North");
-
+        
         Person person2 = new Person("Majid", (short)21);
         person2.name =  "Majid";
         person2.setAge((short)21);
         person2.dateOfBirth = LocalDate.of(2003, 03, 21);
         person2.married = true;
+        person2.walk(268, "South");
+
+        scan.close();
     }
 }

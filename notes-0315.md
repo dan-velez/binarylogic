@@ -102,4 +102,55 @@ public class Dog extends Animal {
         System.out.println("Woof");
     }
 }
+
+public class Main {
+    public static void main (String[] args) {
+        Animal dog = new Dog();
+        Animal animal = new Animal();
+        dog.makeSound();
+        animal.makeSound();
+    }
+}
 ```
+
+* **@Override** annotation is optional.
+* **@Override** forces the compiler to find an overriding method.
+
+* **extends** permits the object to inherit the methods and values. It will have
+  the exact same **values and methods** as the parents unless **overriden**.
+
+  * **Overloading** allows developers to have flexible, cleaner code providing
+    multiple entry ways to a function.
+
+* **Overriding** allows developers to customize behaviors of parent classes.
+
+* toString -> String representation. Override in **model classes**.
+* Java Beans requires overriding **hashcode()** and **toString()**.
+
+
+## Arrays ##
+
+* Arrays in java are **data structures**: they are a means of collectiong various
+  values into an organized structure so they can be accessed together.
+
+* Java Arrays store values sequentially in memory. This allows access to a 
+  single value to be very fast. Memory mgmt. 5 bytes = 40 bits of data.
+
+* 4 integers is 16 bytes of data. **O(1)** access time in arrays.
+
+* Java Arrays must know:
+    * data type.
+    * size.
+
+* This means, the len is **immutable**.
+* Need to create a new array to **append**. Find a new space in memory.
+* Object arrays are arrays of memory locations on the heap.
+* Arrays are **typed**.
+* Length and type are **immutable**.
+* Arrays can have other arrays.
+* For **mutable** type, use other data structure.
+
+* Java arrays have index numbers assigned to each value they contain, in order.
+  0-indexed. 
+
+* Some data structures cannot be primitive based.

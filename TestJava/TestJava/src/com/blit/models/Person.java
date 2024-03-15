@@ -3,7 +3,6 @@ package com.blit.models;
 import java.time.LocalDate;
 
 public class Person {
-    
     public String name;
     private short age;
     public LocalDate dateOfBirth;
@@ -38,25 +37,5 @@ public class Person {
         if(newAge >= 0) {
             this.age = newAge;
         }
-    }
-
-    @Override
-    public String toString() {
-        return "The person's name is: "+this.name;
-    }
-
-    @Override
-    public boolean equals (Object obj) {
-        if(this == obj) return true;
-        if(obj == null) return false;
-        if(getClass() != obj.getClass()) return false;
-        // if(age == obj.age && name == obj.name) return true;
-        return false;
-    }
-
-    @Override
-    public int hashCode () {
-        final int prime = 31;
-        return 1;
     }
 }
