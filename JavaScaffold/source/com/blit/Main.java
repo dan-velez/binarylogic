@@ -20,7 +20,7 @@ public class Main {
         System.out.println("Name of main class:");
         String mainClassName = scan.nextLine();
         scan.close();
-        
+
         try {
             createProjectDirectory(projectName);
             createSourceFolder(projectName);
@@ -157,7 +157,7 @@ public class Main {
                 "# Compile JAR from root directory." + "\n" +
                 "javac -d ./classes/ $(find ./source/ -name \"*.java\")" + "\n"+
                 "cd classes/ && jar -cvmf manifest.txt ../"+jarName+" "+
-                "$(find ./source/ -name \"*.class\")"+"\n"+
+                "$(find . -name \"*.class\")"+"\n"+
                 "cd ../" + "\n" +
 
                 "\n# Run main class file." + "\n" +
@@ -183,7 +183,7 @@ public class Main {
             FileWriter writer = new FileWriter(fname);
             writer.write(
                 "rm ./*.jar\n"+
-                "rm $(find ./classes/ -name \"*.class\")\b"
+                "rm $(find ./classes/ -name \"*.class\")\n"
             );
             writer.close();
             Runtime.getRuntime().exec("chmod +x "+fname);
