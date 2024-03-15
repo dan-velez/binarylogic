@@ -7,7 +7,7 @@ import java.time.LocalDate;
 public class Models {
     public static void main (String[] args) {
         Scanner scan = new Scanner(System.in);
-        Person person = new Person();
+        Person person = new Person(null, (short)0);
 
         System.out.println("What is your name?");
         String answer = scan.nextLine();
@@ -50,9 +50,9 @@ public class Models {
 
         System.out.println("How many steps would you like to walk?");
         answer = scan.nextLine();
-        person.walk(Integer.parseInt(answer));
+        person.walk(Integer.parseInt(answer), "North");
 
-        Person person2 = new Person();
+        Person person2 = new Person("Majid", (short)21);
         person2.name =  "Majid";
         person2.setAge((short)21);
         person2.dateOfBirth = LocalDate.of(2003, 03, 21);
