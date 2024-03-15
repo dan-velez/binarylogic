@@ -18,6 +18,10 @@ jar -cvmf manifest.txt Models.jar com
 java -jar app1.jar
 
 
+## Inspect JAR ##
+jar -tf app1.jar
+
+
 ## Adding Changes ##
 # git add .
 # git commit -m "Message"
