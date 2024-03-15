@@ -10,3 +10,8 @@ java -jar app1.jar
 # javac $(find . -name "*.java")
 # javac -d classes/ source/com/blit/*.java source/com/blit/models/*.java
 # javac -d ./classes/ $(find ./source/ -name "*.java")
+
+# Adding Changes
+# git add .
+# git commit -m "Message"
+# git push origin master
