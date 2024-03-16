@@ -1,0 +1,3 @@
+Manifest-Version: 1.0.0
+Main-Class: com.blit.Main
+Class-Path: ~/binarylogic/AlpacaCryptoBot/javax.json-1.1.4.jar
