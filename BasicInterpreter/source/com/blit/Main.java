@@ -17,7 +17,7 @@ public class Main {
 
 	public static void usage () {
 		System.out.println(
-			"Usage: jlox [script path]"
+			"Usage: java -jar BasiInterpreter.jar [script path]"
 		);
 	}
 }

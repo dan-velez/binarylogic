@@ -1,7 +1,11 @@
+/**
+ * Run lexer and pipe output to parser. Lex, parse, generate, and execute code.
+ */
+
 package com.blit;
 
 import java.io.FileReader;
-import java.util.Scanner;
+// import java.util.Scanner;
 
 public class Lox {
 
@@ -20,6 +24,7 @@ public class Lox {
             System.out.println("Could not read file: ["+fname+"]");
             System.exit(0);
         }
+        System.out.println("Script length: "+script.length());
         Lexer lex = new Lexer(script);
     }
 

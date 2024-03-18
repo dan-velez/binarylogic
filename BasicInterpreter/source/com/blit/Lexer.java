@@ -32,7 +32,7 @@ public class Lexer {
         }
     }
 
-    public List<Token> lex (String text) {
+    private List<Token> lex (String text) {
         String lexeme = "";
         int lineNum = 1;
         boolean inString = false;
@@ -85,13 +85,17 @@ public class Lexer {
                         lexeme = "";
                         continue;
                     case "OR":
+                        break;
                 }
 
                 if(lexeme.length() > 0) {
-                    // lexeme = "";
-                    // tokens.add(new Token(
-                    //     TokenType.IDENTIFIER, lineNum, lexeme));
-                    // continue;
+                    // Find which TokenType this is.
+                    if(inIdentifier) {
+                        tokens.add(new Token(
+                            TokenType.IDENTIFIER, lineNum, lexeme));
+                        lexeme = "";
+                        continue;
+                    }
                 }
             }
 

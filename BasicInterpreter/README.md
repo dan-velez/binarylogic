@@ -1,8 +1,15 @@
 # BasicInterpreter #
-Create a BASIC interpreter using online tutorial. Work through dragon book
-afterwards.
+An interpreter for a custom programming language. Include a **lexer**, 
+**parser**, **generator**, and **executor**.
 
 3U?C5!vkJJ4EgXz
+
+
+## Finite State Machine ##
+The design pattern commonly used for implementing lexers is the Finite State 
+Machine (FSM) or State Pattern. 
+
+
 
 ## Notes ##
 * Can create a **line-by-line interpreter**.
@@ -114,7 +121,7 @@ afterwards.
 * **Regular expressions** can be used to perform all types of text search and text 
   replace operations.
 
-
+ 
 ## Lox Language ##
 
 * How to implement the **Lox** language.
@@ -210,5 +217,3 @@ ben.serve("Reader");
     * trigonometric functions
     * file I/O
     * reading input from the user 
-
-
