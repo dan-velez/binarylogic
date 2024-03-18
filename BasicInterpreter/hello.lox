@@ -1,0 +1,25 @@
+print "Hello, World!";
+var x = 32;
+var y = 32/8;
+var z = 34 * 9;
+var bool = x and y;
+
+
+var str = "Hello, world!";
+
+fun f (x, y, z) {
+    return x + y + z;
+}
+
+print f(x, y, 34);
+
+for (var i = 0; i < 10; i++) {
+    print i;
+}
+
+var i = 0;
+
+while (i < 10) {
+    print i;
+    i = i+1;
+}

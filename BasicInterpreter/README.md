@@ -65,4 +65,150 @@ afterwards.
   originally conceived to parse human languages by AI researchers who were 
   trying to get computers to talk to us.
 
-* 
+* The most powerful bookkeeping tool is to transform the tree into an entirely 
+  new data structure that more directly expresses the semantics of the code.
+
+* I enjoy parsing text with programming languages so creating an interpreter is
+  second hand.
+
+* Re-create lambda lisp with the lambda symbol as the function definition 
+ symbol. Re-design the language. Requires a special editor.
+
+* You can think of the compiler as a pipeline where each stage’s job is to 
+ organize the data representing the user’s code in a way that makes the next 
+ stage simpler to implement
+
+* In the middle, the code may be stored in some intermediate representation (IR)
+
+* pennyArea = 3.14159 * (0.75 / 2) * (0.75 / 2);
+
+* Optimization techniques: 
+    * “constant propagation”, 
+    * “common subexpression elimination”, 
+    * “loop invariant code motion”, 
+    * “global value numbering”, 
+    * “strength reduction”, 
+    * “scalar replacement of aggregates”, 
+    * “dead code elimination”, and 
+    * “loop unrolling”. 
+
+* **Generating Code** -> Last step, after optimization.
+* Can generate **p-code** or portable machine code. Create a VM and an IR 
+  language.VM or a mini-compiler to another machine language.
+
+* You can write a little mini-compiler for each target architecture.
+* Or you can write a virtual machine (VM), a program that emulates a 
+  hypothetical chip supporting your virtual architecture at runtime. 
+
+* The  **runtime** has all the services needed to run the code.
+* if the language automatically manages memory, we need a garbage collector 
+  going in order to reclaim unused bits.
+
+* **Single-pass Compilers** -> Do not create IR code. Builds up code one rule
+  at a time.
+
+* **Tree-wal interpreter** -> Execute as it goes. No **AST**.
+
+* **Transpiler** -> Produce other high level language code. Source to source.
+
+* **Regular expressions** can be used to perform all types of text search and text 
+  replace operations.
+
+
+## Lox Language ##
+
+* How to implement the **Lox** language.
+```
+// lox example.
+print "Hello, world!"
+```
+
+* **Memory MGMT**:
+    * Reference Counting:
+    * Garbage Collection:
+
+* **Data Types**:
+    * Boolean
+    * Numbers: Integers and decimals
+    * Strings
+    * Nil
+
+* **Expressions**:
+    * Arithmetic: Prefix, postfix, and binary
+    * Comparison: <, >, =, ==, <=, >= (for numbers only)
+    * Logical: !, and, or
+    * Precedence and Grouping: (min + max) / 2
+
+* **Statements**:
+    * An expression that produces a value.
+    * print "Hello, world!";
+    * "some expression";
+    * { 
+        print "one";
+        print "two";
+      }
+
+* **Variables**:
+    * using **var** statement. Intialize to default, **nil**. 
+
+* **Control Flow**:
+    * **if**:  if (condition) { print "yes"; } else { print "no"; }
+    * **while**: while (a < 10) { print a; a = a+1; }
+    * **for loop**: for (var a = 1; a < 10; a++ ){ print a; }
+
+* **Functions**:
+    * makeBreakfast(egg, ham, toast);
+    * fun printSum (a, b) { print a+b; }
+    * print identity(addPair)(1, 2);
+    * Can declare funs in other funs
+    * First class objects.
+
+* **Classes**:
+```
+class Breakfast {
+    
+    init (meat, bread) {
+        this.meat = meat;
+        this.bread = bread;
+    }
+
+    cook () {
+        print "cook";
+    }
+
+    serve (who) {
+        print "serve";
+        print this.bread + ", " + who; 
+    } 
+
+}
+
+var svar = Breakfast;
+somFun(Breakfast);
+
+var bfast = Breakfast();
+print bfast;
+
+bfast.meat = "sausage";
+
+// Inheritance
+
+class Brunch < Breakfast {
+
+    drink () {
+        print "Drinking";
+    }
+
+}
+
+var ben = Brunch("ham", "English Muffin");
+ben.serve("Reader");
+```
+
+* **STD Library**:
+    * String manipulation
+    * trigonometric functions
+    * file I/O
+    * reading input from the user 
+
+
