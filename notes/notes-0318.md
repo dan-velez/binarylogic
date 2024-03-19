@@ -107,3 +107,83 @@
       always run at the end of a try or catch block. This is done to clean up
       resources, etc. So that exceptions don't accidentially create memory
       leaks or large objects that are not being used anymore.
+
+## Collection Framework/API ##
+
+* This is a framework in **java.util** of predefined data structure classes and
+  utility tools for manipulating them. 
+
+* The framework uses **generics** to define implementations. This means that
+  the various classes will work with any type of **java object** including
+  **custom objects**.
+
+* Generics use **<>** to define the type of value the structure will accept.
+    * e.g. **ArrayList<String>** will accept Strings for a list.
+
+* This means the collection framework classes **cannot accept raw primitives.**
+* However, Java primitives can be **wrapped** into their **wrapper classes** and
+  be treated as objects when necessary.
+* Wrapper classes are 
+    * **Boolean, Short, Byte, Integer, Long, Double, Float, Character**.
+
+* Inheritance Heiarchy:
+    * Iterable -> Collection -> List, Queue, Set 
+        (ArrayList, PriorityQeue, HashSet, Dequeue, LinkedHashSet)
+
+* interface java.lang.Iterable Methods: **forEach, iterator(), spliterator()**
+* **Collection** inherits from **Iterable**.
+
+* **Collection<E>** extends Iterable.
+
+
+* **List (interface)** - Is a data structure. It has a dynamic (can change) 
+  size that allows for duplicate values and maintains the order of insertion.
+
+    * **ArrayList (Class)** - Uses arrays under the hood to store values. When
+      more values are stored, the initial array is discarded and replaced with
+      a new array 50% larger. **Lookup is fast O(1)**. Insertion is slow.  
+
+    * **LinkedList (Class)** - LLs use nodes to wrap their elements in order to
+      create the list. LLs in Java are doubly linked, so a node knows the value
+      that preceeds it in the list and the value that proceeds it, but not the
+      location of any other elements. DO NOT use arrays. Not **sequential** in
+      memory. **Useful for insertion O(1)**. **Lookup is difficult**.
+
+* **Sets (Interface)** - Data structure that is not required to be ordered. 
+  does **NOT take duplicates**. Dynamic size.
+    
+    * **HashSet (Class)** - Unordered set. USes HashMap to store values. Uses
+      hash values to determine order. It can take a single null value.
+    
+    * **TreeSet (Class)** - SOrted set backed by a TreeMap. Cannot take any 
+      **null** values (unsortable).
+    
+* **Queue (Interface)** - A first in first out data structure. It is dynamically
+  sized, maintains the order of insertion and has easy methods for accessing 
+  and removing the first element (head).   
+
+    * **Dequeue (Interface)** - Double ended queue. Combines the functionalities
+      of queue and stack, allowing for elements to be removed or added to both
+      front and end of queue.
+
+    * **ArrayDequeue (Class)** - Implements a Dequeue and is std class for stack
+      now that Stack is deprecated. Its values are stored in an array. 
+
+* **Stack (Class)** - First in last out data structure. Dynamically sized.
+  Maintains order of insertion. The Stack class is depricated and ArrayDeque is
+  recommended for Stacks.  
+
+  * **Maps (Interface)**:
+    * Map is a data structure in the collection framework. Does not inherit from
+      **iterable** or **collection**. They are not iterable. Represent
+      **key/value** pairs. BOth keys and values can be **any type of object**
+      defined for the map in the generic. E.g., **Map<String, Integer>** has
+      String keeys and Integer values. Can solve a lot of problems with maps.
+      **Goto data structure**.
+    
+    * **HashMap (Class)** - Orders itself using the hashes of the keys. It is
+      considered to be **unordered**. 
+    
+    * **TreeMap (Class)** - Uses a **binary tree** to order elements in the map.
+      Therefore the keys must be comparable so they can be ordered.
+    

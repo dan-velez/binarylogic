@@ -1,0 +1,1 @@
+# Notes 03-19-2024  Binary Logic #
