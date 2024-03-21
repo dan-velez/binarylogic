@@ -84,7 +84,7 @@
       compiler will require that exception to be handled before it will allow
       compilation. **Checked** are **checked by compiler**.
 
-    * Unckeded exceptions are not required to be handled because it is not 
+    * Uncheked exceptions are not required to be handled because it is not 
       forseen to be unhandled.
 
     * Errors are unchecked. Exceptions are checked by compiler. 
@@ -173,7 +173,7 @@
   Maintains order of insertion. The Stack class is depricated and ArrayDeque is
   recommended for Stacks.  
 
-  * **Maps (Interface)**:
+  * **Maps (Interface)**: **java.util.Map**
     * Map is a data structure in the collection framework. Does not inherit from
       **iterable** or **collection**. They are not iterable. Represent
       **key/value** pairs. BOth keys and values can be **any type of object**
@@ -187,3 +187,8 @@
     * **TreeMap (Class)** - Uses a **binary tree** to order elements in the map.
       Therefore the keys must be comparable so they can be ordered.
     
+* **Collections (class)** - This is a utility class. It has many static methods
+  available to interact with **Collection objects**. The most common method 
+  used is **Collections.sort(Collection)**, .reverse(), .shuffle(), .frquency(),
+  etc. **java.util.Collections**. Not to be confused with 
+  **java.util.Collection**, which is the root class of collections.

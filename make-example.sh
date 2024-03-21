@@ -1,5 +1,4 @@
 ## Running Java Classes ##
-# Run javac -d classes/ Class1.java Class2.java
 # cd classes/
 # java com.blit.Class1
 # OR

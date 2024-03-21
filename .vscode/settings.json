@@ -3,6 +3,8 @@
     "java.project.sourcePaths": [
         "HelloAbstract/source",
         "BasicInterpreter/source",
-        "HelloThrowable/source"
+        "HelloThrowable/source",
+        "HelloCollectionAPI/source",
+        "CarInventorySystem/source"
     ]
 }
