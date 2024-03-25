@@ -81,14 +81,42 @@
       * **SELECT\*** - Access or read data from the table. **SELECT** statments
         are called **queries** in SQL.
 
-    * **Data Query Language (DQL)**
-        * Contriversial sublanguage in SQL. Some developers believe that SELECT
-          should be considered a seperate sublanguage because it does not
-          manipulate anything. Some delevopers recognize SELECT as part of DML
-          due to CRUD, but some see **DQL** as a sublanguage of **DML**. SOme
-          people will include **WHERE** as a **DQL Keyword** because it is
-          often used with **SELECT** statments. However, it is also used with
-          **DELETE** and **UPDATE** statements. 
+  * **Data Query Language (DQL)**
+      * Contriversial sublanguage in SQL. Some developers believe that SELECT
+        should be considered a seperate sublanguage because it does not
+        manipulate anything. Some delevopers recognize SELECT as part of DML
+        due to CRUD, but some see **DQL** as a sublanguage of **DML**. SOme
+        people will include **WHERE** as a **DQL Keyword** because it is
+        often used with **SELECT** statments. However, it is also used with
+        **DELETE** and **UPDATE** statements. 
 
-    * **DCL**
-    * **TCL**
+  * **Data Control Language (DCL)** 
+      * concerned with acces levels. What users can perform what functions. 
+        Users can be restricted to just **queries**, just **DML** functions,
+        or have full powers, or some combination.
+      
+      * This is managed by a DB admin. Applications themselves can be granted
+        specific user credentials.
+
+      * 2 **keywords**: **GRANT** and **REVOKE**.
+
+    
+  * **Transaction Control Language (TCL)**
+      * A transaction in SQL is used when you need multiple SQL statements to
+        either succeed or fail in their entirety. E.g. bank transfer, moving
+        money to another account (subtract and add money). Bot subtracting
+        and adding should succeed. 
+      
+      * Keywords: **BEGIN**, **COMMIT**, **ROLLBACK**, **SET TRANSACTION**.
+          * **BEGIN** - opens the transactions. ANy statements run after 
+            BEGIN will be considered part of the trasnaction.
+
+          * **COMMIT** - Applies all the statements to the DB and closes the
+            transaction.
+          
+          * **ROLLBACK** - Closes the transaction without applying changes
+            to the DB, ensuring nothing is commited from the transaction.
+
+          * **SET TRANSACTION** - This will change the transaction level of 
+            the DB. This is used to manage how safe transactions are performed
+            on the DB.
