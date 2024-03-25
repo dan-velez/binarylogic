@@ -136,3 +136,19 @@ UPDATE students SET address = "678 Developer Way" WHERE id = 6;
 ROLLBACK;
 
 DELETE FROM students WHERE id = 6
+
+-- SCALAR FUNCTIONS
+
+SELECT UPPER (s_name), id FROM students;
+
+SELECT * FROM students WHERE s_name LIKE '%i%'; -- Has an 'I' in it.
+
+
+-- AGGREGATE FUNCTIONS
+SELECT AVG(gpa) FROM students;
+
+SELECT MIN(gpa) FROM students;
+
+
+-- SET OPERATIONS
+SELECT s_name FROM students ORDER BY s_name ASC; -- DESC 

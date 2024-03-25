@@ -13,6 +13,7 @@ mvn package
 
 # Run the code
 java -cp target/my-app-1.0-SNAPSHOT.jar com.blit.App
+mvn exec:java -Dexec.mainClass="com.blit.App"
 
 # Compile & Run
 mvn package && java -cp target/my-app-1.0-SNAPSHOT.jar com.blit.App

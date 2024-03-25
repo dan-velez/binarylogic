@@ -5,6 +5,7 @@
         "BasicInterpreter/source",
         "HelloThrowable/source",
         "HelloCollectionAPI/source",
-        "CarInventorySystem/source"
+        "CarInventorySystem/source",
+        "HelloMaven/src/main/java"
     ]
 }
