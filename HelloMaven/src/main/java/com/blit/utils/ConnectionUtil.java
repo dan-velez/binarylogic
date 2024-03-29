@@ -13,8 +13,6 @@ public class ConnectionUtil {
          * Driver. This is no longer necessary usually, but will encounter it.
          */
 
-        System.out.println("MySQL Driver.");
-
          try {
             // Register Driver.
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();

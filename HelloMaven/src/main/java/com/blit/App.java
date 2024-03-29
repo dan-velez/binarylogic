@@ -1,9 +1,12 @@
 package com.blit;
 
+import com.blit.daos.StudentDAOMySQLImpl;
+import com.blit.models.Student;
 import com.blit.utils.ConnectionUtil;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -14,6 +17,14 @@ public class App {
         System.out.println("Hello Maven.");
         System.out.println("JSON Library install.");
         System.out.println("------------------------");
+
+        StudentDAOMySQLImpl studentDao = new StudentDAOMySQLImpl();
+        List<Student> students = studentDao.findAllStudents();
+        for(Student s : students) {
+            System.out.println(s);
+        }
+
+        studentDao.addNewStudent(new Student("Kal", 3.86, "M"));
 
         JSONObject obj = new JSONObject("{\"A\":1}");
         obj.put("B", 2);
@@ -26,24 +37,6 @@ public class App {
         jarr.put(obj);
 
         System.out.println(jarr.toString(4));
-
-        Connection c = null;
-        try {
-            ConnectionUtil conn = new ConnectionUtil();
-             c = conn.getConnection();
-           
-            System.out.println("Connection Success");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if(c != null){
-                try {
-                    c.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
     }
-    
+
 }

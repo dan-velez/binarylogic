@@ -1,2 +1,7 @@
 /home/danny/binarylogic/HelloMaven/src/main/java/com/blit/App.java
+/home/danny/binarylogic/HelloMaven/src/main/java/com/blit/Calculator.java
+/home/danny/binarylogic/HelloMaven/src/main/java/com/blit/daos/StudentDAOMySQLImpl.java
+/home/danny/binarylogic/HelloMaven/src/main/java/com/blit/models/Student.java
+/home/danny/binarylogic/HelloMaven/src/main/java/com/blit/controllers/HelloServlet.java
 /home/danny/binarylogic/HelloMaven/src/main/java/com/blit/utils/ConnectionUtil.java
+/home/danny/binarylogic/HelloMaven/src/main/java/com/blit/daos/StudentDAO.java
