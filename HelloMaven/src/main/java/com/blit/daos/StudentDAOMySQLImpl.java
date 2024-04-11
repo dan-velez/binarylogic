@@ -81,7 +81,26 @@ public class StudentDAOMySQLImpl implements StudentDAO {
 
     @Override
     public Student findStudentById(int id) {
-        return new Student();
+        try (Connection conn = ConnectionUtil.getConnection()) {
+            String sql = "SELECT * FROM students WHERE id="+id+";";
+            
+            Statement statement = conn.createStatement();
+            ResultSet result = statement.executeQuery(sql);
+            Student student = null;
+
+            if (result.next()) {
+                student = new Student();
+                student.setId(result.getInt("id"));
+                student.setName(result.getString("s_name"));
+                student.setGender(result.getString("gender"));
+                student.setGpa(result.getDouble("gpa"));
+            }
+
+            return student;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
     
 }

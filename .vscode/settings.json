@@ -6,6 +6,9 @@
         "HelloThrowable/source",
         "HelloCollectionAPI/source",
         "CarInventorySystem/source",
-        "HelloMaven/src/main/java"
-    ]
+        "HelloMaven/src/main/java",
+        "HelloMaven/target"
+    ],
+    "maven.view": "hierarchical",
+    "java.compile.nullAnalysis.mode": "automatic"
 }

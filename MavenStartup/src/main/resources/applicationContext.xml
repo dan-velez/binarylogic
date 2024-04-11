@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd  
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean
+        name="movieDao"
+        class="com.blit.daos.MovieDAOImpl"></bean>
+    
+    <bean
+        name="movieService"
+        class="com.blit.services.MovieService">
+        <constructor-arg index="0" ref="movieDao"></constructor-arg>        
+    </bean>
+
+    <bean
+        name="movieController"
+        class="com.blit.controllers.MovieController">
+        <constructor-arg index="0" ref="movieService"></constructor-arg>
+    </bean>
+</beans>

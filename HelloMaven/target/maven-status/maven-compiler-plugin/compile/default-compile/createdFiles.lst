@@ -1,4 +1,6 @@
 com/blit/daos/StudentDAO.class
+com/blit/controllers/StudentServlet.class
 com/blit/daos/StudentDAOMySQLImpl.class
+com/blit/services/StudentService.class
 com/blit/utils/ConnectionUtil.class
 com/blit/models/Student.class

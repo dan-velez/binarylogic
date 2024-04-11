@@ -1,6 +1,9 @@
 package com.blit.models;
 
+/** Represents a Student in the database. */
+
 public class Student {
+
     private String name;
     private int id;
     private double gpa;

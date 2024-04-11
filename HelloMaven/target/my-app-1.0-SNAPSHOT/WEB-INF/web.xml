@@ -16,13 +16,13 @@ version="2.5">
     </welcome-file-list>
 
     <servlet>
-        <servlet-name>HelloServlet</servlet-name>
-        <servlet-class>com.bli.controllers.HelloServlet</servlet-class>
+        <servlet-name>StudentServlet</servlet-name>
+        <servlet-class>com.blit.controllers.StudentServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>HelloServlet</servlet-name>
-        <url-pattern>/hello</url-pattern>
+        <servlet-name>StudentServlet</servlet-name>
+        <url-pattern>/students/*</url-pattern>
     </servlet-mapping>
 
 </web-app>
