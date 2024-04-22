@@ -4,7 +4,7 @@ javac -cp ./org.objectweb.asm-3.1.0.jar -d ./classes/ $(find ./source/ -name "*.
 # cd ../
 
 # Run main class file.
-java -cp ./org.objectweb.asm-3.1.0.jar.jar:classes com.blit.Kernel
+# java -cp ./org.objectweb.asm-3.1.0.jar.jar:classes com.blit.Kernel
 
 # Run JAR
 # java -jar OperatingSystem2.jar

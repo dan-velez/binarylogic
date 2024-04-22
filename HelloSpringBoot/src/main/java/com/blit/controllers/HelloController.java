@@ -1,5 +1,7 @@
 package com.blit.controllers;
 
+/** Spring Web/MVC Example. Abstracts servlet layer. */
+
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,0 +1,1 @@
+mysql -u root --password=password carDb < sql/show_structure.sql 
