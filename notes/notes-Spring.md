@@ -163,3 +163,10 @@ for (Student student : university.getStudents()) {
 
 * **Authentication** - Proving user/client is who they claim to be.
 * **Authorization** - Ensuring the authenticated individual has proper access.
+
+
+## 04/22/24 ##
+* **JWT** -> Server responds w/ cookie. JWT remembers user and what level of
+  authorization they have. Dont need login everytime make a request.
+  Constructed differently in every situation. What info goes into JWT is
+  different everytime. Use instructions on CarShow project. 
