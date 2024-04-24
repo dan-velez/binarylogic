@@ -12,13 +12,12 @@ Layered architecture.
 
 
 ## TODO ##
-* Create repo
-  * OperatingSystem/
-      * Java/
-      * C/
-* Build out project enough to make public and add to resume.
 * Primer on **x86 Assembler**
 * Primer on **C**
+* **OS-Dev** whitepage
+    * Substitue C code with compiled Java assembly?
+    * Decouple bootloader into files.
+* Build out project enough to make public and add to resume.
 * Begin writing bootloader and kernel.
 * MM, PM, Drivers, FS, Shell, Sys libraries.
 
@@ -181,3 +180,83 @@ Build into the userspace. Have adequate debuggers for everything.
 
 One toolset. No overhead. JS applications are not lightweight. OS and systems
 apps focus on efficiancy. A lot to learn from this level of programming. 
+
+Much progress to make. Bootloader is WIP. Bootloader should bootstrap into C.
+Need to learn how to memory is structured in x64 system. CPU registers, 
+instruction set using Intel syntax. Compiled to machine code. At this level, 
+there is ultimate control of hardware. Learn interrupts for each device and
+design a system and library to use them all. Implement own C library or use
+Java compiled to ASM. How to reference memory in Java? How to issue interupts?
+
+Understand the memory model, interupts, disk, devices, to freely program.
+
+
+## Register Machine Model ##
+* Sub type of Random Access Machines -> Stack Machine Model.
+* Model of Computation -> A mechanical process for performing comutations.
+* Earliest models were recursive function machines. 
+* COunters, accumulators, stacks, and registers.
+* ARM and MIPS and Reduced Instruction Sets.
+* CISC (complex) come with different execution environments and security
+  features. 
+* Hybrid Instruction Set -> RISC as ALU in CISC envritonment. 
+* There are several hundred instructions in the **x86_64** instruction set.
+* CPU fetches and executes instructions from memory.
+
+
+## BIOS ##
+* Provides service routines to clock, disk drives, network cards, TTY.
+* Interrupt vector is at the start of memory.
+* BIOS loads boot sector to 0x7c00 to avoid interferring w/ boot sector.
+* Bootloader needs to bootstrap OS into memory.
+* CPUS emulate older versions of CPUs.
+* x64 emulates the 8086
+* Need to switch CPU into 64 bit mode 
+* BIOS does auto detection of hardware devices.
+* Interrupts - Run another instruction on device. 
+* Each interrupt is a number, setup by BIOS initially at the start of memory.
+* Interrupt Vector table contains pointers to service routines.
+* e.g. read from disk or from network card.
+* Interrupts are ONLY available in Real 8086 mode.
+
+
+## Segment Registers ##
+* Memory is divided into segments, indexed by registers. Absolute
+  address is calculated as the segment start address offsetted by
+  specified address.
+
+* **data segment**, **stack segment**.
+
+* To calculate absolute address, the CPU multiples the value in 
+the segment register and then adds your offset address. 
+
+* Each segment represents logical division in memory:
+  code, data, stack, heap, other program structures.
+
+* Segment number and offset number to address memory.
+* Segment Descriptor table contains the segment and includes info such as
+  base address, length, access rights.
+
+* Paging has superseded segmentation. x64 contains both segmentation and paging.
+
+* `org` is for raw binray files and it sets the relative address for which to
+  use addresses. Botloaded is always at 0x7c00, thereofore all addresses are
+  realtive to this. Labels are relative to themselves and do not count.
+
+* **Segmentation** is the 16-bit memory model to access up to 1mb of memory. 
+* x86 uses 4 registers to store the locations of segments: base addresses. 
+* Segments are usually **64kb in size** and are moveable. If the base address
+  is 0, this is **0-64kb**. 
+    * **CS, DS, ES, SS** are all segment registers. 
+
+* Add the base address to offset address to get absolute address. 
+
+* Segments can overlap causing corruption. Bytes can be refered to in a number
+  of different ways. This is what is meant when there is no memory protection.
+
+* CODE SEGMENT, DATA SEGMENT, EXTRA SEGMENT, STACK SEGMENT.
+
+
+## Protected Mode ##
+* Provides memory protection through descriptor tables that describe memory
+  layout. 

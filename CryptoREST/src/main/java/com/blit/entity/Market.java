@@ -22,9 +22,9 @@ public class Market {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    // @OneToMany(cascade = CascadeType.ALL)
-    // @JsonIgnore
-    // private List<Crypto> cryptos;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Crypto> cryptos;
 
     private String name;
     private double marketCap;
@@ -42,12 +42,12 @@ public class Market {
     public void setId(long id) {
         this.id = id;
     }
-    // public List<Crypto> getCryptos() {
-    //     return this.cryptos;
-    // }
-    // public void setCryptos(List<Crypto> cryptos) {
-    //     this.cryptos = cryptos;
-    // }
+    public List<Crypto> getCryptos() {
+        return this.cryptos;
+    }
+    public void setCryptos(List<Crypto> cryptos) {
+        this.cryptos = cryptos;
+    }
     public String getName() {
         return this.name;
     }

@@ -17,9 +17,9 @@ public class Crypto {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     
-    // @ManyToOne(fetch = FetchType.LAZY)
-    // @JoinColumn(name = "market")
-    // private Market market;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "market")
+    private Market market;
 
     private String symbol;
     private String datetime;
@@ -48,12 +48,12 @@ public class Crypto {
     public void setId(long id) {
         this.id = id;
     }
-    // public Market getMarket () {
-    //     return market;
-    // }
-    // public void setMarket(Market market) {
-    //     this.market = market;
-    // }
+    public Market getMarket () {
+        return market;
+    }
+    public void setMarket(Market market) {
+        this.market = market;
+    }
     public String getSymbol() {
         return symbol;
     }

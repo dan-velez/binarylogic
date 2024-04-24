@@ -25,10 +25,10 @@ nextchar:
 finished:
     sub     eax, ebx        ; Number of segments between 2 addresses. In bytes.
     
-    mov     edx, eax
-    mov     ecx, msg
-    mov     ebx, 1
-    mov     eax, 4
+    mov     edx, eax        ; Length of string
+    mov     ecx, msg        ; Memory address of message.
+    mov     ebx, 1          ; STDOUT
+    mov     eax, 4          ; SYS_WRITE (opcode 4)
     int     80h
 
     mov     ebx, 0

@@ -29,6 +29,13 @@
   Similar to lambdas in Java. The arrow is formed with `=>` sign. 
   **Event Listeners** are prime examples of using **functional programming**.
 
+* package.json has dependencies.
+* .gitignore to ignore files for upload to git.
+* `npm start` creates the dev environment.
+* npm buils to finish. Host files in S3 bucket. Webpage will respond. The
+  build folder contains compiled application. 
+
+* Send requests to backedn hosted on another machine.
 
 ```javascript
 let c = () => console.log("Hello");
@@ -197,3 +204,32 @@ server.listen(3000, '127.0.0.1', () => {
 * Transpiler, webpack (combine JS files to one) (bundler), linter (check if 
   compiles).
 * npx runs without saving to disk.
+
+
+## State vs Props ##
+
+* Each component in React will have its own unique **State** object. Can store
+  data that persits in rendering and re-rendering of component. 
+
+* This data is traked so that when it is chaned, the component will re-render
+  with the new data.
+
+* State is exculsive to the individual component. Multiple instances will each
+  have their own states. State is not directly accessible outside the component.
+
+* State should be immutable. Changes to state should use the `useState` hook so
+  that React can respond to changed made. 
+
+* **Props** are values that are passed to a component from its parent 
+  component. One way data flow. To achieve 2 way data flow, there needs to be
+  an additional framework (**redux**).
+  
+* When parent's prop changes, the child re-renders. Props comes from parent,
+  state is internal. Any change will re-render. Virutal DOM is compared to
+  readl DOM and changes are made. 
+
+* Common design convention is to have **Smart(logic) components** and 
+  **Dumb(display) components**. 
+
+* Smart components handle state and manipulate values. Dumb components display
+  values as they inherit them via **Props** (properties).  

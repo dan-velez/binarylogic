@@ -10,8 +10,8 @@ SECTION .text
 global _start
 
 _start:
-    mov edx, 13
-    mov ecx, msg
+    mov edx, 13     ; Number of bytes to write
+    mov ecx, msg    ; Memory address of message.
     mov ebx, 1      ; Write to STDOUT
     mov eax, 4      ; Sys call number
     int 80h         ; Call sys call.
