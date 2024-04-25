@@ -238,6 +238,9 @@ server.listen(3000, '127.0.0.1', () => {
 * Maybe create the `JShell` first to have something to work with. Include java
   builtings. Tab completion, copy and pasting lines.
 
+* IcedHttp should be first, along with IcedSH. These will be used to build up
+  the rest of programs.
+
   * JNeuralNet - CLI neural net. Train on CLI. Has a Data Scaper.  
   * HttpClient
   * Shell
@@ -268,3 +271,43 @@ server.listen(3000, '127.0.0.1', () => {
   links in application. 
 
 * Increase vulnerability to XSS attacks. 
+
+
+## React Routing ##
+* Allows for SPA development in React.
+* For browsers -> React Router DOM.
+* Differnt for each platform e.g., React Native.
+* Design:
+
+    * **Router** - Base component. BrowserRouter is standard. Use alias on 
+      import so we can swap it for another router.
+
+    * **Route** - Specifies the URL associated with component to display.
+        * Routes can be **fuzzy matched**, allowing a pattern matcher for
+          component routing. Uses **wildcard character** in the URL. Can also
+          use path params with :param syntax. 
+
+        * Routes declare the component they will display with the "element"
+          attribute. This can be directly JSX or an imported component. 
+
+    * **Routes** -> Creates a switch statment for displaying one route instead
+      of another. Used to be called "Switch". 
+
+    * **Redirect** - This will reroute a component to another component if it
+      is ever rendered. 
+
+    * **Link** - An anchor tag but it routes instead of sending requests.
+      Moving internally within application.
+
+          * **NavLink** - Functionality of Link w/ additional abilities.
+            Highlighting.
+
+* **React Router API** - Additional functionality to mimic normal site.
+    * **Navigate** - Override browser history, allowing users to use the
+      foward and back buttons to move between routes.
+
+    * Global variables like `location`, current URL, and `match`(pattern match
+      with route) for components to know where user has been. 
+
+
+## AXIOS ##
