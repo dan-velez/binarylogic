@@ -34,6 +34,18 @@ public class Market {
     private double maxSupply;
     private String[] links;
 
+    public Market(String name, double marketCap, double volume, 
+    double circulatingSupply, double totalSupply,
+            double maxSupply, String[] links) {
+        this.name = name;
+        this.marketCap = marketCap;
+        this.volume = volume;
+        this.circulatingSupply = circulatingSupply;
+        this.totalSupply = totalSupply;
+        this.maxSupply = maxSupply;
+        this.links = links;
+    }
+
     public Market() {}
     
     public long getId() {

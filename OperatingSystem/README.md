@@ -15,10 +15,10 @@ Layered architecture.
 * Primer on **x86 Assembler**
 * Primer on **C**
 * **OS-Dev** whitepage
-    * Substitue C code with compiled Java assembly?
+    * Substitue C code with compiled Java assembly.
     * Decouple bootloader into files.
 * Build out project enough to make public and add to resume.
-* Begin writing bootloader and kernel.
+* Begin writing bootloader and kernel using Java.
 * MM, PM, Drivers, FS, Shell, Sys libraries.
 
 
@@ -121,8 +121,6 @@ Layered architecture.
 
 
 ## User Interface ##
-
-
 ## System Libraries ##
 
 

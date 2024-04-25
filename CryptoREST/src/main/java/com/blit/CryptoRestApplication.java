@@ -11,13 +11,23 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.blit.repository.CryptoRepository;
+import com.blit.repository.MarketRepository;
+import com.blit.repository.UserRepository;
 import com.blit.entity.Crypto;
+import com.blit.entity.Market;
+import com.blit.entity.User;
 
 @SpringBootApplication
 public class CryptoRestApplication implements CommandLineRunner {
 	
 	@Autowired
 	private CryptoRepository cryptoRepo;
+
+	@Autowired
+	private UserRepository userRepo;
+
+	@Autowired
+	private MarketRepository marketRepo;
 
 	private static final Logger logger = LoggerFactory.getLogger(
 		CryptoRestApplication.class);
@@ -36,6 +46,23 @@ public class CryptoRestApplication implements CommandLineRunner {
 		);
 
 		cryptoRepo.saveAll(cryptos);
+
+		String[] links = {"https://alpacafinance.org"};
+		List<Market> markets = Arrays.asList(
+			new Market("Alpaca", 26938149, 3967355,
+				149436269, 149436269,
+				188000000, links)
+		);
+
+		marketRepo.saveAll(markets);
+
+		userRepo.save(new User("user", // userPass
+		"$2y$10$dc3e3saiBRuwAmihOB0cWe8cI./MVgKIrdq9uCukCnRXYoNgYR1e6",
+			"USER"));
+
+		userRepo.save(new User("admin", // adminPass
+		"$2y$10$VKlPOmlBxacyOtoGuASJuu6F0E4Gf/VfiWsVZSHlr3xHzjn9DQ68W",
+			"ADMIN"));
 	}
 
 }

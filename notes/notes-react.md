@@ -59,7 +59,6 @@ console.log(a);
 ```
 
 ## Micro Service Project ##
-
 * E-Commerce platform broken into microservices.
 * 4 micro services - 2 tasks per week.
 * Plan out tasks then implement code, test code, code review. 
@@ -68,7 +67,6 @@ console.log(a);
 * 1 team per service. 
 
 ## TypeScript ##
-
 * A superset of JS. **ALL** valid JS is valid TS. TypeScript does more. 
   Everything JS does and more. 
 
@@ -125,7 +123,6 @@ function myFunc():void {
 * `ReadOnly` modifier - value cannot be manipulated.
 
 ## React.js ##
-
 * A **JS/TS library** created by **Facebook** that is used to create front end
   web based applications. Very few design decisions. Tools for which user can
   decide on which to use. NOT a framework. Angular is competitor. 
@@ -168,7 +165,6 @@ function myFunc():void {
     * So many modules and plugins, hard to find support for exact React env.
 
 ## Node.js ##
-
 * Browserless runtime environment for JS. 
 * Serverside JS.
 * Use as a development environment. Building and designing components. 
@@ -199,7 +195,6 @@ server.listen(3000, '127.0.0.1', () => {
 
 
 ## Creating React Apps ##
-
 * Use `npm` to create React apps.
 * Transpiler, webpack (combine JS files to one) (bundler), linter (check if 
   compiles).
@@ -207,7 +202,6 @@ server.listen(3000, '127.0.0.1', () => {
 
 
 ## State vs Props ##
-
 * Each component in React will have its own unique **State** object. Can store
   data that persits in rendering and re-rendering of component. 
 
@@ -233,3 +227,44 @@ server.listen(3000, '127.0.0.1', () => {
 
 * Smart components handle state and manipulate values. Dumb components display
   values as they inherit them via **Props** (properties).  
+
+
+## Side Projects ##
+* Each program should do something interesting not done before. Create each
+  program using a guide and exapnd upon it. Coding to learn, for fun, to build
+  things. Create Service and library classes to assist. Compilers can be coded
+  freely w/o much lookup. Can create own algorithms. 
+
+* Maybe create the `JShell` first to have something to work with. Include java
+  builtings. Tab completion, copy and pasting lines.
+
+  * JNeuralNet - CLI neural net. Train on CLI. Has a Data Scaper.  
+  * HttpClient
+  * Shell
+  * NLP
+  * SearchEngine
+  * JSONLisp - Compiler to a custom LISP dialect.
+  * CryptoTrader - Decouple project1. Host on Github.
+
+
+## Single Page Applications ##
+* Expected standard. Use React to build this for CrytpoApp
+
+* Single HTML page manipulated to display different views. Gmail, Trello.
+* Swaps components. Gmail is Angular. 
+* Component based frameworks work well with SPAs, allowing for components to
+  emulate the various web pages.
+
+* Routing is the process of using the URL of the webpage to determine which
+  components are currently mounted.
+
+* SPAs are fast and responsive. Files are downloaded once. Use backend APIs to
+  access information. 
+
+* High caching ability. Information is cached internally. State can be shared.
+  Information shared through components. 
+
+* Does not perform well w/ **search engine optimization**. Cannot see pages and
+  links in application. 
+
+* Increase vulnerability to XSS attacks. 
